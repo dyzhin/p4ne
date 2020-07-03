@@ -12,23 +12,26 @@ for i in z:
         for j in f:
             a = f.readline()
             if a.find('ip address') > 0 and a.find('.') > 0:
-                ip_list.append(a.strip())
+                ip_list.append(a.strip().replace("ip address ", ""))
                 ip_counter += 1
 
 #print(ip_list)
 #for i in ip_list:
 #    print(i)
 
-print(ip_counter)
+print('Всего найдено %s записи)' % ip_counter)
 
-new_list = []
-ip_clear_couter = 0
+clear_list = []
+ip_clear_counter = 0
 for i in ip_list:
-    if i not in new_list:
-        new_list.append(i)
-        ip_clear_couter += 1
+    if i not in clear_list:
+        clear_list.append(i)
+        ip_clear_counter += 1
 #        print(i)
     else:
-        print(i)
+        print(i +'- повторая хуйня!!! Я тебя поймал!!!')
 
-print(ip_clear_couter)
+print('Итого, уникальных записей - %s!' % ip_clear_counter)
+
+for i in clear_list:
+    print(i)
