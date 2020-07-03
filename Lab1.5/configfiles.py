@@ -27,5 +27,8 @@ for i in ip_list:
     if i not in new_list:
         new_list.append(i)
         ip_clear_couter += 1
+#        print(i)
+    else:
+        print(i)
 
 print(ip_clear_couter)
